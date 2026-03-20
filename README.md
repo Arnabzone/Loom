@@ -2,6 +2,12 @@
 
 Loom is a full-stack task management application with a modern frontend and a production-style backend. It supports authentication, task organization, task status tracking, and a kanban-style workflow for managing day-to-day work.
 
+## Demo
+
+Project demo:
+
+https://www.youtube.com/watch?v=homWlNSsEEg
+
 ## Tech Stack
 
 - Frontend: React, TypeScript, Vite, Zustand, React Router
@@ -13,25 +19,10 @@ Loom is a full-stack task management application with a modern frontend and a pr
 
 ## Features
 
-- User registration and login
-- JWT-based authentication
-- Refresh token flow
-- Protected routes
-- Task CRUD operations
-- Kanban board with `todo`, `in-progress`, and `done` columns
-- Task search and filtering support
-- Pagination-ready backend task API
-- Soft delete for tasks
-- Centralized error handling
-- Rate limiting and request logging on the backend
-
-## Project Structure
-
-```text
-Loom/
-  server/   Backend API, Prisma schema, Docker setup
-  web/      Frontend application
-```
+- Secure authentication with register, login, logout, and refresh token flow
+- Core task management with create, update, delete, search, and status tracking
+- Kanban-style workflow with `todo`, `in-progress`, and `done` columns
+- Production-style backend with Express, Prisma, PostgreSQL, validation, and error handling
 
 ## Prerequisites
 
@@ -83,8 +74,6 @@ This project is configured to use PostgreSQL from Docker on:
 - Host: `localhost`
 - Port: `5433`
 - Database: `loom_db`
-- Username: `postgres`
-- Password: `postgres`
 
 ### 2. Install Dependencies
 
@@ -146,29 +135,6 @@ Frontend runs at:
 http://localhost:3000
 ```
 
-## Vercel Deployment
-
-The frontend can be deployed to Vercel from the `web` folder.
-
-Recommended Vercel settings:
-
-- Framework Preset: `Vite`
-- Root Directory: `web`
-- Build Command: `npm run build`
-- Output Directory: `dist`
-
-Set this environment variable in Vercel:
-
-```env
-VITE_API_URL="https://your-backend-url"
-```
-
-This repo also includes [web/vercel.json](/c:/Users/KIIT/Downloads/Loom/web/vercel.json) so React Router routes like `/login`, `/dashboard`, and `/tasks` rewrite correctly to `index.html`.
-
-Important:
-
-- Deploy only the frontend to Vercel
-- Deploy the Express/Prisma backend separately on a backend host such as Railway, Render, or Fly.io
 
 ## Default Local Flow
 
@@ -218,7 +184,7 @@ Once both frontend and backend are running:
 Check that `server/.env` uses:
 
 ```env
-DATABASE_URL="postgresql://postgres:postgres@localhost:5433/loom_db?schema=public"
+DATABASE_URL="postgresql://<db_user>:<db_password>@localhost:5433/loom_db?schema=public"
 ```
 
 Then confirm Docker is running:

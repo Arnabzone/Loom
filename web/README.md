@@ -12,12 +12,10 @@ This folder contains the frontend for Loom, a task management web application.
 
 ## Features
 
-- Login and registration pages
-- Protected dashboard routes
-- Task dashboard
-- Kanban-style task board
+- Authentication flow
+- Task dashboard and kanban board
 - Task creation and updates
-- API integration with the backend server
+- Backend API integration
 
 ## Run Frontend
 
@@ -45,20 +43,3 @@ http://localhost:3000
 The frontend depends on the backend API running at `http://localhost:4000`.
 
 See the main project README at [README.md](/c:/Users/KIIT/Downloads/Loom/README.md) for the full project setup.
-
-## Deploy To Vercel
-
-Use these Vercel settings:
-
-- Framework Preset: `Vite`
-- Root Directory: `web`
-- Build Command: `npm run build`
-- Output Directory: `dist`
-
-Set:
-
-```env
-VITE_API_URL="https://your-backend-url"
-```
-
-The file [vercel.json](/c:/Users/KIIT/Downloads/Loom/web/vercel.json) is included so frontend routes work correctly with React Router.
