@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+server/node_modules/
+web/node_modules/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+server/.env
+web/.env
+
+# Keep examples
+!.env.example
+!server/.env.example
+!web/.env.example
+
+# Build output
+dist/
+build/
+.next/
+out/
+coverage/
+server/dist/
+web/dist/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+server-dev.log
+web-dev.log
+server/server-dev.log
+web/web-dev.log
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Vercel
+.vercel/
+
+# TypeScript
+*.tsbuildinfo
