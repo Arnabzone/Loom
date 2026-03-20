@@ -146,6 +146,30 @@ Frontend runs at:
 http://localhost:3000
 ```
 
+## Vercel Deployment
+
+The frontend can be deployed to Vercel from the `web` folder.
+
+Recommended Vercel settings:
+
+- Framework Preset: `Vite`
+- Root Directory: `web`
+- Build Command: `npm run build`
+- Output Directory: `dist`
+
+Set this environment variable in Vercel:
+
+```env
+VITE_API_URL="https://your-backend-url"
+```
+
+This repo also includes [web/vercel.json](/c:/Users/KIIT/Downloads/Loom/web/vercel.json) so React Router routes like `/login`, `/dashboard`, and `/tasks` rewrite correctly to `index.html`.
+
+Important:
+
+- Deploy only the frontend to Vercel
+- Deploy the Express/Prisma backend separately on a backend host such as Railway, Render, or Fly.io
+
 ## Default Local Flow
 
 Once both frontend and backend are running:
